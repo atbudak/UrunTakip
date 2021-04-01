@@ -1,0 +1,33 @@
+﻿@model UrunTakipSistemi.Models.Entity.TBLURUNLER
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Ürün Ekle</h2>
+
+@using (@Html.BeginForm("YeniUrun", "Urun", FormMethod.Post))
+{
+
+    @Html.HiddenFor(x => x.ID)
+    <br />
+    @Html.Label("Ürün Adı")
+    @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })
+    <br />
+    @Html.Label("Ürün Markası")
+    @Html.TextBoxFor(x => x.MARKA, new { @class = "form-control" })
+    <br />
+    @Html.Label("Stok")
+    @Html.TextBoxFor(x => x.STOK, new { @class = "form-control" })
+    <br />
+    @Html.Label("Alış Fiyatı")
+    @Html.TextBoxFor(x => x.ALISFIYAT, new { @class = "form-control" })
+    <br />
+    @Html.Label("Satış Fiyatı")
+    @Html.TextBoxFor(x => x.SATISFIYAT, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kategori Adı")
+    @Html.DropDownListFor(x=>x.TBLKATEGORI.ID,(List<SelectListItem>)ViewBag.urndrop, new { @class="form-control"})
+    <br />
+    <button class="btn btn-success">Ekle</button>
+}

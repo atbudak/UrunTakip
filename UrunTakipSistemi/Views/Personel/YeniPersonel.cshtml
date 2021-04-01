@@ -1,0 +1,27 @@
+﻿@model UrunTakipSistemi.Models.Entity.TBLPERSONEL
+@{
+    ViewBag.Title = "YeniPersonel";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Personel Ekleme</h2>
+
+@using (@Html.BeginForm("YeniPersonel", "Personel", FormMethod.Post))
+{
+
+    @Html.HiddenFor(x => x.ID)
+    <br />
+    @Html.Label("Adı")
+    @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AD, "", new { @style = "color:black;opacity:.7" })
+    <br />
+    @Html.Label("Soyadı")
+    @Html.TextBoxFor(x => x.SOYAD, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SOYAD, "", new { @style = "color:black;opacity:.7" })
+    <br />
+    @Html.Label("Departman")
+    @Html.TextBoxFor(x => x.DEPARTMAN, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.DEPARTMAN, "", new { @style = "color:black;opacity:.7" })
+    <br />
+    <button class="btn btn-success">Ekle</button>
+}

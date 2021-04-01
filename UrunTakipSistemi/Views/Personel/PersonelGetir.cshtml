@@ -1,0 +1,27 @@
+﻿@model UrunTakipSistemi.Models.Entity.TBLPERSONEL
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Personel Güncelleme</h2>
+
+@using (@Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+{
+
+    @Html.HiddenFor(x => x.ID)
+    <br />
+    @Html.Label("Adı")
+    @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AD, "", new { @style = "color:black;opacity:.7" })
+    <br />
+    @Html.Label("Soyadı")
+    @Html.TextBoxFor(x => x.SOYAD, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SOYAD, "", new { @style = "color:black;opacity:.7" })
+    <br />
+    @Html.Label("Departman")
+    @Html.TextBoxFor(x => x.DEPARTMAN, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.DEPARTMAN, "", new { @style = "color:black;opacity:.7" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+}

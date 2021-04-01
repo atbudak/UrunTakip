@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrunTakipSistemi", "UrunTakipSistemi\UrunTakipSistemi.csproj", "{76926B6F-B4E3-49ED-A841-5A5425B8FF57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76926B6F-B4E3-49ED-A841-5A5425B8FF57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76926B6F-B4E3-49ED-A841-5A5425B8FF57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76926B6F-B4E3-49ED-A841-5A5425B8FF57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76926B6F-B4E3-49ED-A841-5A5425B8FF57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24BFBC2E-B283-4C7C-B460-CE13AD2E465B}
+	EndGlobalSection
+EndGlobal

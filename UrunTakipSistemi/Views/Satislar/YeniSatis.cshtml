@@ -1,0 +1,26 @@
+﻿@model UrunTakipSistemi.Models.Entity.TBLSATISLAR
+@{
+    ViewBag.Title = "YeniSatis";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Satış Paneli</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.ID)
+    <br />
+    @Html.Label("Ürün Adı")
+    @Html.DropDownListFor(x => x.TBLURUNLER.ID, (List<SelectListItem>)ViewBag.urun, new { @class = "form-control" })
+    <br />
+    @Html.Label("Personel")
+    @Html.DropDownListFor(x => x.TBLPERSONEL.ID, (List<SelectListItem>)ViewBag.pers, new { @class = "form-control" })
+    <br />
+    @Html.Label("Müşteri")
+    @Html.DropDownListFor(x => x.TBLMUSTERI.ID, (List<SelectListItem>)ViewBag.must, new { @class = "form-control" })
+    <br />
+    @Html.Label("Fiyat")
+    @*@Html.TextBoxFor(x => x.FIYAT, new { @class = "form-control" })*@
+    @Html.DropDownListFor(x => x.TBLURUNLER.ID, (List<SelectListItem>)ViewBag.fiyat, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Ekle</button>
+</form>

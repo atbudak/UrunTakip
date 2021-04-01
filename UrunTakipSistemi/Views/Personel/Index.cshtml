@@ -1,0 +1,34 @@
+﻿@using UrunTakipSistemi.Models.Entity
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<TBLPERSONEL>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Personel Sayfası</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <td>ID</td>
+        <td>AD</td>
+        <td>SOYAD</td>
+        <td>DEPARTMAN</td>
+        <td>SİL</td>
+        <td>GÜNCELLE</td>
+    </tr>
+    @foreach (var pers in Model)
+    {
+        <tr>
+            <td>@pers.ID</td>
+            <td>@pers.AD</td>
+            <td>@pers.SOYAD</td>
+            <td>@pers.DEPARTMAN</td>
+            <td><a href="/Personel/PersonelSil/@pers.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Personel/PersonelGetir/@pers.ID" class="btn btn-info">Güncelle</a></td>
+        </tr>
+    }
+</table>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+<a href="/Personel/YeniPersonel" class="btn btn-success">Personel Ekle</a>

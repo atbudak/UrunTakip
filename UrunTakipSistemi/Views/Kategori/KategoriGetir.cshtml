@@ -1,0 +1,19 @@
+﻿@model UrunTakipSistemi.Models.Entity.TBLKATEGORI
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
+{
+    <h2>Kategori Güncelleme</h2>
+    <br />
+    @Html.HiddenFor(x => x.ID)
+    <br />
+    @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AD, "", new { @style = "color:black;opacity:.7" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+}
+

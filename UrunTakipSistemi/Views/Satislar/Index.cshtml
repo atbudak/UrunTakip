@@ -1,0 +1,31 @@
+﻿@using UrunTakipSistemi.Models.Entity
+@model List<TBLSATISLAR>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Satışlar</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <td>ID</td>
+        <td>ÜRÜN</td>
+        <td>PERSONEL</td>
+        <td>MÜŞTERİ</td>
+        <td>FİYAT</td>
+        <td>TARİH</td>
+    </tr>
+    @foreach (var sts in Model)
+    {
+        <tr>
+            <td>@sts.ID</td>
+            <td>@sts.TBLURUNLER.AD</td>
+            <td>@sts.TBLPERSONEL.AD @sts.TBLPERSONEL.SOYAD</td>
+            <td>@sts.TBLMUSTERI.AD @sts.TBLMUSTERI.SOYAD</td>
+            <td>@sts.FIYAT</td>
+            <td>@sts.TARIH</td>
+        </tr>
+    }
+</table>
+<a href="/Satislar/YeniSatis" class="btn btn-success">Yeni Satış İşlemi</a>

@@ -1,0 +1,36 @@
+﻿@using UrunTakipSistemi.Models.Entity
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<TBLMUSTERI>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Müşteri Sayfası</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <td>ID</td>
+        <td>AD</td>
+        <td>SOYAD</td>
+        <td>ŞEHİR</td>
+        <td>BAKİYE</td>
+        <td>SİL</td>
+        <td>GÜNCELLE</td>
+    </tr>
+    @foreach (var cust in Model)
+    {
+        <tr>
+            <td>@cust.ID</td>
+            <td>@cust.AD</td>
+            <td>@cust.SOYAD</td>
+            <td>@cust.SEHIR</td>
+            <td>@cust.BAKIYE</td>
+            <td><a href="/Musteri/MusteriSil/@cust.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Musteri/MusteriGetir/@cust.ID" class="btn btn-info">Güncelle</a></td>
+        </tr>
+    }
+</table>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+<a href="/Musteri/YeniMusteri" class="btn btn-success">Müşteri Ekle</a>

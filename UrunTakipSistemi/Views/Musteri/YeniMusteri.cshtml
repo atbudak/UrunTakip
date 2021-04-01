@@ -1,0 +1,32 @@
+﻿@model UrunTakipSistemi.Models.Entity.TBLMUSTERI
+@{
+    ViewBag.Title = "YeniMusteri";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Musteri Ekle</h2>
+
+@using (@Html.BeginForm("YeniMusteri", "Musteri", FormMethod.Post))
+{
+    @*@Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+    @Html.HiddenFor(x => x.ID)
+    <br />
+    @Html.Label("Müşteri Adı")
+    @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AD, "", new { @style = "color:black;opacity:.7" })
+    <br />
+    @Html.Label("Müşteri Soyadı")
+    @Html.TextBoxFor(x => x.SOYAD, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SOYAD, "", new { @style = "color:black;opacity:.7" })
+    <br />
+    @Html.Label("Şehir")
+    @Html.TextBoxFor(x => x.SEHIR, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SEHIR, "", new { @style = "color:black;opacity:.7" })
+    <br />
+    @Html.Label("Bakiye")
+    @Html.TextBoxFor(x => x.BAKIYE, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BAKIYE, "", new { @style = "color:black;opacity:.7" })
+    <br />
+    <button class="btn btn-success">Ekle</button>
+}
